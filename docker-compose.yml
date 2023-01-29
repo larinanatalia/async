@@ -1,0 +1,16 @@
+version: '3.9'
+
+networks:
+  net1:
+
+services:
+  db:
+    image: postgres:13.4
+    ports:
+      - "5430:5432"
+    env_file:
+      - .env
+    networks:
+      net1:
+        aliases:
+          - database
